@@ -28,7 +28,7 @@ require('db.php');
 
    <div id="employee_table">  
         <table class="table table-bordered">  
-           <tr>  
+           <tr >  
                 <th width="50%">Customer Name</th>   
                 <th width="10%">Email</th>    
                 <th width="10%">Contact</th>     
