@@ -148,11 +148,17 @@ session_start();
 							<input type="text" name="quantity" class="form-control" value="1" /> 
 							<p>Add Toppings</p>
 							<select name="toppings[]" data-style="btn-default" class="selectpicker form-control" multiple>
-								<option disabled><b>Prices</b> 10" 35, 14" 45, 18" 60</option>
+								<option disabled><b>Prices :</b> 10" 35, 14" 45, 18" 60</option>
 						        <option>Cheese </option>
 						        <option>Bacon</option>
 						        <option>Ground Beef</option>
 						        <option>Ham</option>
+                    <option>Italian Sausage</option>
+                    <option>Peperoni</option>
+                    <option>Salami</option>
+                    <option>Capers</option>
+                    <option>Roasted Garlic</option> 
+                    <option>Mushroom</option>
 						    </select>
                             <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />  
                           </div>  
