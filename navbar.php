@@ -12,8 +12,8 @@
       <li class="nav-item">
         <a class="nav-link" href="http://localhost/pizza_system/daily_order.php">Daily Report</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+     <li class="nav-item">
+        <a class="nav-link" href="http://localhost/pizza_system/sizes.php">Sizes Report</a>
       </li>
     </ul>
   </div>

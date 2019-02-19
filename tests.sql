@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2019 at 10:20 AM
+-- Generation Time: Feb 19, 2019 at 04:22 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -33,16 +33,19 @@ CREATE TABLE `customer_info` (
   `email` varchar(50) NOT NULL,
   `full_name` varchar(50) NOT NULL,
   `contact` int(11) NOT NULL,
-  `complete_address` varchar(100) NOT NULL
+  `complete_address` varchar(100) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `queue` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer_info`
 --
 
-INSERT INTO `customer_info` (`id`, `email`, `full_name`, `contact`, `complete_address`) VALUES
-(1, 'boy1@sample.com', 'boy1', 911111111, 'marikina'),
-(2, 'boy2@sample.com', 'boy2', 922222222, 'Queazon city');
+INSERT INTO `customer_info` (`id`, `email`, `full_name`, `contact`, `complete_address`, `date_added`, `queue`) VALUES
+(1, 'boy1@sample.com', 'boy1', 911111111, 'marikina', '2019-02-18 15:10:45', 1),
+(2, 'boy2@sample.com', 'boy2', 922222222, 'Queazon city', '2019-02-18 15:10:45', 0),
+(3, 'boy3@gmail.com', 'boy3', 922356521, 'makati city', '2019-02-19 11:18:56', 0);
 
 -- --------------------------------------------------------
 
@@ -56,18 +59,21 @@ CREATE TABLE `order_detail` (
   `item_name` varchar(15) NOT NULL,
   `item_price` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `toppings` varchar(50) NOT NULL
+  `toppings` varchar(50) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `order_detail`
 --
 
-INSERT INTO `order_detail` (`id`, `customer_info_id`, `item_name`, `item_price`, `quantity`, `toppings`) VALUES
-(1, 1, 'HAawaiian', 26010, 3, 'Ground Beef'),
-(2, 1, 'cheese', 17510, 1, 'Cheese,Bacon,Ground Beef'),
-(3, 2, 'Roasted Garlic', 24010, 1, 'Bacon'),
-(4, 2, 'Pepp & Mushrm', 22010, 2, 'Cheese,Bacon,Ground Beef');
+INSERT INTO `order_detail` (`id`, `customer_info_id`, `item_name`, `item_price`, `quantity`, `toppings`, `date_added`) VALUES
+(1, 1, 'HAawaiian', 26010, 3, 'Ground Beef', '2019-02-18 15:12:12'),
+(2, 1, 'cheese', 17510, 1, 'Cheese,Bacon,Ground Beef', '2019-02-18 15:12:12'),
+(3, 2, 'Roasted Garlic', 24010, 1, 'Bacon', '2019-02-18 15:12:12'),
+(4, 2, 'Pepp & Mushrm', 22010, 2, 'Cheese,Bacon,Ground Beef', '2019-02-18 15:12:12'),
+(5, 3, 'Roasted Garlic', 40514, 2, 'Salami,Capers,Mushroom', '2019-02-19 11:18:56'),
+(6, 3, 'Manhattan', 29514, 1, 'Cheese,Ham', '2019-02-19 11:18:56');
 
 -- --------------------------------------------------------
 
@@ -219,13 +225,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `customer_info`
 --
 ALTER TABLE `customer_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`

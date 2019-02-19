@@ -26,7 +26,7 @@ $result = mysqli_query($connect, $query);
   <a href="logout.php">Logout</a>
   <hr class="my-4">
 
-   <div id="employee_table">  
+   <div id="table">  
         <table class="table table-bordered">  
            <tr >  
                 <th width="15%">Customer Name</th>   
